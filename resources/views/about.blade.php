@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papagesha</title>
+    <link rel="icon" type="image/png" href="assets/auth/landing-nav.png">
+    <link href="{{ asset('bootstrap-5.3.3-dist/css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: "Plus Jakarta Sans", sans-serif;
+        }
+
+        .hero {
+            background-color: #f8f9fa;
+            padding: 80px 0;
+        }
+
+        .about-section {
+            padding: 80px 0;
+        }
+
+        .footer {
+            background: #f8f9fa;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .responsive-img {
+            max-width: 100%;
+            /* Default untuk mobile */
+            height: auto;
+            overflow: hidden;
+            border-radius: 50px;
+        }
+
+        @media (min-width: 992px) {
+            .responsive-img {
+                max-width: 70%;
+                /* Untuk mode laptop */
+            }
+        }
+
+        .box-shadow-bottom {
+            z-index: 1;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3) !important; 
+        }
+
+        @media (min-width: 992px) {
+            .hero {
+                min-height: 70vh !important;
+                /* Ubah tinggi untuk tampilan laptop */
+            }
+
+            .hero .d-flex {
+                min-height: 70vh !important;
+            }
+
+            .hero .hero-overlay {
+                min-height: 70vh !important;
+            }
+
+            .tentang-kami {
+                text-align: left !important;
+            }
+
+            .pict-tentang-kami {
+                margin-bottom: 100px !important;
+            }
+        }
+
+        /* Sembunyikan footer mobile di desktop */
+        .footer-mobile {
+            display: none !important;
+        }
+
+        /* Sembunyikan footer desktop di mobile */
+        @media (max-width: 768px) {
+            .footer-desktop {
+                display: none !important;
+            }
+
+            .footer-mobile {
+                display: flex !important;
+            }
+
+            .navbar {
+                height: 150px !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white box-shadow-bottom" style="height: 90px;">
+        <div class="container">
+            <img src="assets/landing/landing-nav.png" alt="" width="80px" height="70px">
+
+            <!-- Tombol "Meja 01" (Mobile) -->
+            <a class="btn text-center d-lg-none" style="font-size: 14px; font-weight: 700; color: #006041; width: 150px; height: 40px; 
+                border: 1px solid #006041; border-radius: 100px;">
+                Meja 01
+            </a>
+
+            <!-- Daftar Menu (Mobile) - Langsung Ditampilkan -->
+            <ul class="navbar-nav text-center mt-2 d-block d-lg-none w-100 d-flex flex-row justify-content-center">
+                <li class="nav-item mx-2" style="border-bottom: 2px solid #3CAD51;">
+                    <a class="nav-link" style="font-size: 16px; font-weight: 600; color: #006041;">About</a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link" href="main" style="font-size: 16px; font-weight: 600; color: #006041;">Menu</a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link" href="stores" style="font-size: 16px; font-weight: 600; color: #006041;">Stores</a>
+                </li>
+            </ul>
+
+            <!-- Daftar Menu (Desktop) -->
+            <div class="collapse navbar-collapse d-none d-lg-block" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item" style="border-bottom: 2px solid #3CAD51;">
+                        <a class="nav-link text-center" style="font-size: 16px; font-weight: 600; color: #006041;">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-center" href="main" style="font-size: 16px; font-weight: 600; color: #006041;">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-center" href="stores" style="font-size: 16px; font-weight: 600; color: #006041;">Stores</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Tombol "Meja 1" (Desktop) -->
+            <div class="collapse navbar-collapse d-none d-lg-block">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-center" style="font-size: 14px; font-weight: 700; color: #006041; width: 150px; height: 40px; 
+                            border: 1px solid #006041; border-radius: 100px;">
+                            Meja 1
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero text-center" style="position: relative; min-height: 100vh; margin: 0; padding: 0;">
+        <!-- Background Overlay -->
+        <div class="hero-overlay" style="
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            min-height: 100%;
+            height: auto;
+            background-color: rgba(0, 96, 65, 0.3);
+            z-index: 0;">
+        </div>
+
+
+        <!-- Konten -->
+        <div class="d-flex flex-column flex-lg-row" style="position: relative; z-index: 1; min-height: 100vh; width: 100%; margin: 0; padding: 0;">
+            <!-- Bagian Kiri -->
+            <div class="col-lg-6 d-flex justify-content-center justify-content-lg-end align-items-center text-center text-lg-start"
+                style="height: 100%; padding: 20px;">
+                <div style="max-width: 550px; padding: 20px; color: white;">
+                    <span style="font-size: 50px; font-weight: 800; color: #006041;">Selamat <br>Datang di <br>Papagesha!</span>
+                    <br><br>
+                    <div style="margin-left: 10px;">
+                        <span style="font-size: 22px; font-weight: 500; color: #373D1A;">
+                            Perpaduan biji kopi terbaik Indonesia dengan cita rasa modern <br>
+                            Menciptakan pengalaman ngopi yang istimewa.
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bagian Kanan -->
+            <div class="col-lg-6 d-flex justify-content-center align-items-center" style="height: 100%;">
+                <img src="assets/landing/landing-jumbotron.png" alt="" class="img-fluid" style="align-self: flex-end; max-height: 75%; width: auto;">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section mx-2 lg-mx-5">
+        <div class="container">
+            <h2 class="tentang-kami" style="font-size: 45px; font-weight: 800; color: #006041; text-align: center;">
+                Tentang Kami
+            </h2>
+            <br>
+            <div class="row align-items-center">
+                <!-- Col 1 -->
+                <div class="col-lg-6 text-center order-1 pict-tentang-kami" style="margin-bottom: 50px;">
+                    <div class="img-fluid m-auto" style="width: 450px; height: 450px; overflow: hidden; border-radius: 50px;">
+                        <img src="assets/landing/landing-main-assets2.jpg" alt="Tentang Kami" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+
+                <!-- Col 2 -->
+                <div class="col-lg-6 position-relative mb-4 mb-lg-5 d-flex justify-content-center align-items-center order-2">
+                    <div class="w-75">
+                        <p style="font-size: 18px; font-weight: 400; line-height: 1.8;">
+                            Papagesha didirikan pada 17 Agustus 2019 di Majalengka, Papagesha hadir dengan konsep awal take-away order, berangkat dari pengalaman panjang para pendirinya. Seiring waktu, kami terus berkembang, menghadirkan pengalaman dine-in yang nyaman dan memperluas menu dengan Manual Brew, Caffe Latte, Cappuccino, serta minuman non-kopi seperti Coklat & Matcha spesial kami. Kini, Papagesha telah melebarkan sayap ke Rajagaluh, terus membawa cita rasa kopi berkualitas dengan sentuhan khas yang tak terlupakan.
+                        </p>
+                        <img src="assets/landing/landing-main-assests1.png" alt="Papagesha" class="d-none d-lg-block" style="position: absolute; top: -180px; right: 30px; width: 200px; transform: rotate(-20deg);">
+                    </div>
+                </div>
+
+                <!-- Col 4 (Diubah jadi ke-3 di Mobile) -->
+                <div class="col-lg-6 text-center order-3 order-lg-4 pict-tentang-kami" style="margin-bottom: 50px;">
+                    <div class="img-fluid m-auto" style="width: 450px; height: 450px; overflow: hidden; border-radius: 50px;">
+                        <img src="assets/landing/landing-main-assets4.jpg" alt="Tentang Kami" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+
+                <!-- Col 3 (Diubah jadi ke-4 di Mobile) -->
+                <div class="col-lg-6 position-relative mb-4 mb-lg-5 d-flex justify-content-center align-items-center order-4 order-lg-3">
+                    <div class="w-75">
+                        <p style="font-size: 18px; font-weight: 400; line-height: 1.8;">
+                            Kopi Geisha adalah salah satu varietas kopi termahal di dunia yang sangat dihargai oleh para pecinta kopi. Kopi ini pertama kali ditemukan di Desa Geisha, Ethiopia, pada tahun 1930 dan mulai diperdagangkan ke berbagai belahan dunia. Kopi Geisha dikenal memiliki aroma dan cita rasa khas dengan notes melati, peach, dan madu. Popularitasnya meningkat setelah dinobatkan sebagai The Best of Panama (BOP), sebuah ajang lelang kopi berkualitas tinggi di Panama. Dalam setiap lelang, kopi ini selalu menjadi primadona dan sering mencapai harga tertinggi dibanding varietas kopi lainnya.
+                        </p>
+                        <img src="assets/landing/landing-main-assets3.png" alt="Papagesha" class="d-none d-lg-block" style="position: absolute; top: -160px; left: -20px; width: 200px; transform: rotate(31.17deg);">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-desktop d-flex footer align-items-center justify-content-center" style="position: relative; height: 273px; margin: 0; padding: 0;">
+
+        <!-- Background Overlay -->
+        <div style="
+        position: absolute; 
+        top: 0; 
+        left: 0; 
+        width: 100%; 
+        height: 100%; 
+        background-color: rgba(0, 96, 65, 0.1);">
+        </div>
+
+        <!-- Konten Footer -->
+        <div class="row d-flex align-items-center justify-content-center p-3 w-65"
+            style="position: absolute; top: 0; z-index: 1; color: #006041; 
+               display: inline-flex; width: auto; border-radius: 10px; align-self: flex-start;">
+
+            <div class="col">
+                <div style="margin-right: 50px;">
+                    <img src="assets/landing/landing-footer.png" alt="" width="148px" height="138px">
+                </div>
+            </div>
+
+            <div class="col">
+                <div style="text-align: left; margin-right: 15px;">
+                    <b style="margin-bottom: 10px;">Contact Us</b>
+                    <div style="margin-bottom: 10px;">
+                        <img src="assets/landing/landing-footer-loc.png" alt="" width="23px" height="23px">
+                        <span>Papagesha Majalengka</span>
+                    </div>
+                    <div>
+                        <img src="assets/landing/landing-footer-wa.png" alt="" width="23px" height="23px">
+                        <span>085182245177</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div style="text-align: left; margin-right: 15px;">
+                    <b style="margin-bottom: 10px;"><br></b>
+                    <div style="margin-bottom: 10px;">
+                        <img src="assets/landing/landing-footer-loc.png" alt="" width="23px" height="23px">
+                        <span>Papagesha Rajagaluh</span>
+                    </div>
+                    <div>
+                        <img src="assets/landing/landing-footer-wa.png" alt="" width="23px" height="23px">
+                        <span>085182245176</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col" style="text-align: left;">
+                <b style="margin-bottom: 10px;"><br></b>
+                <div style="margin-bottom: 10px;">
+                    <img src="assets/landing/landing-footer-loc.png" alt="" width="23px" height="23px">
+                    <span>Papagesha Kadipaten</span>
+                </div>
+                <div>
+                    <img src="assets/landing/landing-footer-wa.png" alt="" width="23px" height="23px">
+                    <span>085182245175</span>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col"></div>
+                <div class="col"></div>
+                <div class="col"></div>
+
+                <div class="col" style="text-align: right;">
+                    <img src="assets/landing/landing-footer-link-1.png" alt="" style="margin: 0 5px;">
+                    <img src="assets/landing/landing-footer-link-2.png" alt="" style="margin: 0 5px;">
+                    <img src="assets/landing/landing-footer-link-3.png" alt="" style="margin: 0 5px;">
+                    <img src="assets/landing/landing-footer-link-4.png" alt="" style="margin: 0 5px;">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <footer class="footer-mobile d-flex flex-column align-items-center justify-content-center"
+        style="position: relative; height: auto; margin: 0; padding: 20px 0;">
+
+        <!-- Background Overlay -->
+        <div style="
+        position: absolute; 
+        top: 0; 
+        left: 0; 
+        width: 100%; 
+        height: 100%; 
+        background-color: rgba(0, 96, 65, 0.1);">
+        </div>
+
+        <!-- Konten Footer -->
+        <div class="container position-relative text-center text-lg-start" style="z-index: 1; color: #006041;">
+            <div class="row align-items-center justify-content-center gy-3">
+
+                <!-- Logo -->
+                <div class="col-12 col-lg-3 text-center text-lg-start">
+                    <img src="assets/landing/landing-footer.png" alt="" width="148px" height="138px">
+                </div>
+
+                <!-- Contact Us 1 -->
+                <div class="col-12 col-sm-6 col-lg-3 text-center text-lg-start">
+                    <b>Contact Us</b>
+                    <div>
+                        <img src="assets/landing/landing-footer-loc.png" alt="" width="23px" height="23px">
+                        <span>Papagesha Majalengka</span>
+                    </div>
+                    <div>
+                        <img src="assets/landing/landing-footer-wa.png" alt="" width="23px" height="23px">
+                        <span>085182245177</span>
+                    </div>
+                </div>
+
+                <!-- Contact Us 2 -->
+                <div class="col-12 col-sm-6 col-lg-3 text-center text-lg-start">
+                    <b><br></b>
+                    <div>
+                        <img src="assets/landing/landing-footer-loc.png" alt="" width="23px" height="23px">
+                        <span>Papagesha Rajagaluh</span>
+                    </div>
+                    <div>
+                        <img src="assets/landing/landing-footer-wa.png" alt="" width="23px" height="23px">
+                        <span>085182245176</span>
+                    </div>
+                </div>
+
+                <!-- Contact Us 3 -->
+                <div class="col-12 col-sm-6 col-lg-3 text-center text-lg-start">
+                    <b><br></b>
+                    <div>
+                        <img src="assets/landing/landing-footer-loc.png" alt="" width="23px" height="23px">
+                        <span>Papagesha Kadipaten</span>
+                    </div>
+                    <div>
+                        <img src="assets/landing/landing-footer-wa.png" alt="" width="23px" height="23px">
+                        <span>085182245175</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <br>
+            <!-- Social Media Links -->
+            <div class="row mt-3 text-center">
+                <div class="col">
+                    <img src="assets/landing/landing-footer-link-1.png" alt="" style="margin: 0 5px;">
+                    <img src="assets/landing/landing-footer-link-2.png" alt="" style="margin: 0 5px;">
+                    <img src="assets/landing/landing-footer-link-3.png" alt="" style="margin: 0 5px;">
+                    <img src="assets/landing/landing-footer-link-4.png" alt="" style="margin: 0 5px;">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="asset('bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js')"></script>
+</body>
+
+</html>

@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papagesha</title>
+    <link rel="icon" type="image/png" href="assets/auth/landing-nav.png">
+    <link href="{{ asset('bootstrap-5.3.3-dist/css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: "Plus Jakarta Sans", sans-serif;
+        }
+
+        .hero {
+            background-color: #f8f9fa;
+            padding: 80px 0;
+        }
+
+        .about-section {
+            padding: 80px 0;
+        }
+
+        .footer {
+            background: #f8f9fa;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .responsive-img {
+            max-width: 100%;
+            /* Default untuk mobile */
+            height: auto;
+            overflow: hidden;
+            border-radius: 50px;
+        }
+
+        @media (min-width: 992px) {
+            .responsive-img {
+                max-width: 70%;
+                /* Untuk mode laptop */
+            }
+        }
+
+        @media (min-width: 992px) {
+            .tentang-kami {
+                text-align: left !important;
+            }
+
+            .pict-tentang-kami {
+                margin-bottom: 100px !important;
+            }
+        }
+
+        /* Sembunyikan footer mobile di desktop */
+        .footer-mobile {
+            display: none !important;
+        }
+
+        /* Sembunyikan footer desktop di mobile */
+        @media (max-width: 768px) {
+            .footer-desktop {
+                display: none !important;
+            }
+
+            .footer-mobile {
+                display: flex !important;
+            }
+
+            .navbar {
+                height: 150px !important;
+            }
+        }
+
+        .head-1 {
+            font-weight: 800;
+            font-size: 32px;
+            color: #222126;
+        }
+
+        .head-2 {
+            font-weight: 800;
+            font-size: 30px;
+            color: #222126;
+        }
+
+        .svg-icon {
+            width: 40px;
+            /* Atur ukuran SVG */
+            height: 40px;
+            top: 0;
+            right: 0;
+            transform: translate(50%, -50%);
+        }
+
+        .box-shadow-bottom {
+            z-index: 1;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3) !important;
+        }
+
+        .judul {
+            font-weight: 800;
+            font-size: 20px;
+            line-height: 26px;
+            color: #222126;
+        }
+
+        .harga {
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 26px;
+            color: #A24B31;
+        }
+
+        .caption {
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 26px;
+            color: #828282;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white box-shadow-bottom" style="height: 90px;">
+        <div class="container">
+            <img src="assets/landing/landing-nav.png" alt="" width="80px" height="70px">
+
+            <!-- Tombol "Meja 01" (Mobile) -->
+            <a class="btn text-center d-lg-none" style="font-size: 14px; font-weight: 700; color: #006041; width: 150px; height: 40px; 
+                border: 1px solid #006041; border-radius: 100px;">
+                Meja 01
+            </a>
+
+            <!-- Daftar Menu (Mobile) - Langsung Ditampilkan -->
+            <ul class="navbar-nav text-center mt-2 d-block d-lg-none w-100 d-flex flex-row justify-content-center">
+                <li class="nav-item mx-2">
+                    <a class="nav-link" href="about" style="font-size: 16px; font-weight: 600; color: #006041;">About</a>
+                </li>
+                <li class="nav-item mx-2" style="border-bottom: 2px solid #3CAD51;">
+                    <a class="nav-link" style="font-size: 16px; font-weight: 600; color: #006041;">Menu</a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link" href="stores" style="font-size: 16px; font-weight: 600; color: #006041;">Stores</a>
+                </li>
+            </ul>
+
+            <!-- Daftar Menu (Desktop) -->
+            <div class="collapse navbar-collapse d-none d-lg-block" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-center" href="about" style="font-size: 16px; font-weight: 600; color: #006041;">About</a>
+                    </li>
+                    <li class="nav-item" style="border-bottom: 2px solid #3CAD51;">
+                        <a class="nav-link text-center" style="font-size: 16px; font-weight: 600; color: #006041;">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-center" href="stores" style="font-size: 16px; font-weight: 600; color: #006041;">Stores</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Tombol "Meja 1" (Desktop) -->
+            <div class="collapse navbar-collapse d-none d-lg-block">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-center" style="font-size: 14px; font-weight: 700; color: #006041; width: 150px; height: 40px; 
+                            border: 1px solid #006041; border-radius: 100px;">
+                            Meja 1
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero text-center" style="position: relative; height: 30vh; margin: 0; padding: 0; background-color: #fff;">
+        <!-- Konten -->
+        <div class="d-flex flex-column flex-lg-row" style="position: relative; z-index: 1; height: 30vh; width: 100%; margin: 0; padding: 0;">
+            <!-- Bagian Kiri -->
+            <div class="col-lg-12 d-flex justify-content-center"
+                style="height: 100%; padding: 20px;">
+                <div style="max-width: 550px; padding: 20px; color: white;">
+                    <div class="img-fluid m-auto" style="overflow: hidden; border-radius: 50px;">
+                        <img src="assets\main\our_menu.png" alt="Tentang Kami" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <br><br>
+                    <div class="w-100 p-1" style="border-radius: 20px; border: 2px dashed #B5C269">
+                        <span style="font-size: 22px; font-weight: 500; color: #373D1A;">Dine In</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section mx-2 lg-mx-5">
+        <div class="container d-flex justify-content-center">
+            <div class="row w-100">
+                <div class="col-lg-3 col-md-4 col-12 d-flex justify-content-md-end justify-content-start align-items-start">
+                    <ul class="text-md-end text-start mt-5" style="list-style: none; padding: 0; margin-top: 0;">
+                        <li style="margin-bottom: 10px;">
+                            <a href="#signature" style="font-weight: 600; font-size: 20px; color: #333333; text-decoration: none; color: inherit;">Signature Coffee</a>
+                        </li>
+                        <li style="margin-bottom: 10px;">
+                            <a href="#black" style="font-weight: 600; font-size: 20px; color: #333333; text-decoration: none; color: inherit;">Black Coffee</a>
+                        </li>
+                        <li style="margin-bottom: 10px;">
+                            <a href="#white" style="font-weight: 600; font-size: 20px; color: #333333; text-decoration: none; color: inherit;">White Coffee</a>
+                        </li>
+                        <li style="margin-bottom: 10px;">
+                            <a href="#bottle" style="font-weight: 600; font-size: 20px; color: #333333; text-decoration: none; color: inherit;">Bottle Series</a>
+                        </li>
+                        <li style="margin-bottom: 10px;">
+                            <a href="#non" style="font-weight: 600; font-size: 20px; color: #333333; text-decoration: none; color: inherit;">Non Coffee</a>
+                        </li>
+                        <li style="margin-bottom: 10px;">
+                            <a href="#pastry" style="font-weight: 600; font-size: 20px; color: #333333; text-decoration: none; color: inherit;">Papa Pastry</a>
+                        </li>
+                        <li style="margin-bottom: 10px;">
+                            <a href="#foodies" style="font-weight: 600; font-size: 20px; color: #333333; text-decoration: none; color: inherit;">Foodies</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-9 col-md-8 col-12">
+                    <div class="row m-2">
+                        <div class="col-12 head-1 mb-2" id="signature">SIGNATURE COFFEE</div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="row mt-2">
+                                <div class="col-6 d-flex justify-content-center align-items-center">
+                                 
+                                    <div class="position-relative">
+                                   
+                                        <img class="img-fluid" src="assets/main/kopi_susu_papa_reguler.png" alt="" width="180px" height="180px">
+                                       <a href="/confirm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-plus-circle-fill position-absolute svg-icon"
+                                            viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                                        </svg>
+                                        </a>
+                                    </div>
+                                   
+                                </div>
+                                <div class="col-6">
+                                    <p class="judul">Hot Kopi Susu Papa (Reguler)</p>
+                                    <p class="harga">Rp. 15.000</p>
+                                    <p class="caption">Kopi Susu premium dengan kacang pilihan, krim susu, dan gula palem terbaik, ukuran reguler.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="row mt-2">
+                                <div class="col-6 d-flex justify-content-center align-items-center">
+                                    <div class="position-relative">
+                                        <img class="img-fluid" src="assets/main/kopi_susu_papa_reguler.png" alt="" width="180px" height="180px">
+                                       <a href="/confirm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-plus-circle-fill position-absolute svg-icon"
+                                            viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                                        </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <p class="judul">Iced Kopi Susu Papa (Reguler)</p>
+                                    <p class="harga">Rp. 15.000</p>
+                                    <p class="caption">Kopi Susu premium dengan kacang pilihan, krim susu, dan gula palem, ukuran reguler.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="row mt-2">
+                                <div class="col-6 d-flex justify-content-center align-items-center">
+                                    <div class="position-relative">
+                                        <img class="img-fluid" src="assets/main/kopi_susu_papa_large.png" alt="" width="180px" height="220px">
+                                       <a href="/confirm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-plus-circle-fill position-absolute svg-icon"
+                                            viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                                        </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <p class="judul">Iced Kopi Susu Papa (Large)</p>
+                                    <p class="harga">Rp. 25.000</p>
+                                    <p class="caption">Kopi Susu dari kopi premium kacang dikombinasikan dengan yang terbaik bahan dari krim susu dan gula palem pilihan dengan ukuran large.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="row mt-2">
+                                <div class="col-6 d-flex justify-content-center align-items-center">
+                                    <div class="position-relative">
+                                        <img class="img-fluid" src="assets/main/kopi_susu_papa_grande.png" alt="" width="180px" height="180px">
+                                       <a href="/confirm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-plus-circle-fill position-absolute svg-icon"
+                                            viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                                        </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <p class="judul">Iced Kopi Susu Papa (Grande)</p>
+                                    <p class="harga">Rp. 20.000</p>
+                                    <p class="caption">Kopi Susu dari kopi premium kacang dikombinasikan dengan yang terbaik bahan dari krim susu dan gula palem pilihan dengan ukuran grande.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12"><br></div>
+                        <div class="col-12 head-1 mb-2" id="black">BLACK COFFEE</div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="row mt-4">
+                                <div class="col-6 d-flex justify-content-center align-items-center">
+                                    <div class="position-relative">
+                                        <img class="img-fluid" src="assets/main/kopi_hitam.png" alt="" width="180px" height="180px">
+                                       <a href="/confirm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-plus-circle-fill position-absolute svg-icon"
+                                            viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                                        </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <p class="judul">Hot Espresso</p>
+                                    <p class="harga">Rp. 20.000</p>
+                                    <p class="caption">Kopi hitam pekat dengan cita rasa khas, dibuat dari biji kopi pilihan.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="row mt-4">
+                                <div class="col-6 d-flex justify-content-center align-items-center">
+                                    <div class="position-relative">
+                                        <img class="img-fluid" src="assets/main/kopi_hitam.png" alt="" width="180px" height="180px">
+                                       <a href="/confirm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-plus-circle-fill position-absolute svg-icon"
+                                            viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                                        </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <p class="judul">Iced Manual Brew</p>
+                                    <p class="harga">Rp. 20.000</p>
+                                    <p class="caption">Metode seduh manual dengan teknik pour-over yang disajikan dingin untuk rasa kopi yang segar.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="row mt-4">
+                                <div class="col-6 d-flex justify-content-center align-items-center">
+                                    <div class="position-relative">
+                                        <img class="img-fluid" src="assets/main/kopi_hitam.png" alt="" width="180px" height="180px">
+                                       <a href="/confirm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-plus-circle-fill position-absolute svg-icon"
+                                            viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                                        </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <p class="judul">Hot Manual Brew</p>
+                                    <p class="harga">Rp. 20.000</p>
+                                    <p class="caption">Metode seduh manual dengan teknik pour-over untuk menikmati rasa kopi yang lebih kompleks.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="row mt-4">
+                                <div class="col-6 d-flex justify-content-center align-items-center">
+                                    <div class="position-relative">
+                                        <img class="img-fluid" src="assets/main/kopi_hitam.png" alt="" width="180px" height="180px">
+                                       <a href="/confirm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-plus-circle-fill position-absolute svg-icon"
+                                            viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                                        </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <p class="judul">Iced Americano</p>
+                                    <p class="harga">Rp. 20.000</p>
+                                    <p class="caption">Espresso yang dicampur dengan air dingin dan es batu, menghasilkan rasa kopi yang segar dan lebih ringan.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="row mt-4">
+                                <div class="col-6 d-flex justify-content-center align-items-center">
+                                    <div class="position-relative">
+                                        <img class="img-fluid" src="assets/main/kopi_hitam.png" alt="" width="180px" height="180px">
+                                       <a href="/confirm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-plus-circle-fill position-absolute svg-icon"
+                                            viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                                        </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <p class="judul">Hot Americano</p>
+                                    <p class="harga">Rp. 20.000</p>
+                                    <p class="caption">Espresso yang dicampur dengan air panas untuk menciptakan kopi hitam dengan rasa yang halus namun tetap kuat.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12"><br></div>
+                        <div class="col-12 head-1 mb-2" id="white">WHITE COFFEE</div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="row mt-4">
+                                <div class="col-6 d-flex justify-content-center align-items-center">
+                                    <div class="position-relative">
+                                        <img class="img-fluid" src="assets/main/kopi_putih.png" alt="" width="180px" height="180px">
+                                       <a href="/confirm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-plus-circle-fill position-absolute svg-icon"
+                                            viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                                        </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <p class="judul">Hot Caffé Latte</p>
+                                    <p class="harga">Rp. 25.000</p>
+                                    <p class="caption">Espresso dengan tambahan susu yang lembut untuk rasa yang lebih creamy.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="row mt-4">
+                                <div class="col-6 d-flex justify-content-center align-items-center">
+                                    <div class="position-relative">
+                                        <img class="img-fluid" src="assets/main/kopi_putih.png" alt="" width="180px" height="180px">
+                                       <a href="/confirm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-plus-circle-fill position-absolute svg-icon"
+                                            viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                                        </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <p class="judul">Hot Cappucino</p>
+                                    <p class="harga">Rp. 25.000</p>
+                                    <p class="caption">Kombinasi espresso, susu, dan busa susu yang lebih tebal untuk tekstur yang kaya.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12"><br></div>
+                        <div class="col-12 head-1" id="bottle">BOTTLE SERIES</div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="row mt-4">
+                                <div class="col-6 d-flex justify-content-center align-items-center">
+                                    <div class="position-relative">
+                                        <img class="img-fluid" src="assets/main/kopi_500ml.png" alt="" width="170px" height="180px">
+                                       <a href="/confirm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-plus-circle-fill position-absolute svg-icon"
+                                            viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                                        </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <p class="judul">Coffee Bottle Series 500ML</p>
+                                    <p class="harga">Rp. 45.000</p>
+                                    <p class="caption">Terkadang cup terasa kurang, Bottle Series jadi pilihan tepat untuk berbagi kebahagiaan! ✨ Tersedia juga varian Choco & Matcha. </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="row mt-4">
+                                <div class="col-6 d-flex justify-content-center align-items-center">
+                                    <div class="position-relative">
+                                        <img class="img-fluid" src="assets/main/kopi_1l.png" alt="" width="130px" height="220px">
+                                       <a href="/confirm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-plus-circle-fill position-absolute svg-icon"
+                                            viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                                        </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <p class="judul">Coffee Bottle Series 1L</p>
+                                    <p class="harga">Rp. 85.000</p>
+                                    <p class="caption">Terkadang cup terasa kurang, Bottle Series jadi pilihan tepat untuk berbagi kebahagiaan! ✨ Tersedia juga varian Choco & Matcha. </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12"><br></div>
+                        <div class="col-12 head-1" id="non">NON COFFEE</div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="row mt-4">
+                                <div class="col-6 d-flex justify-content-center align-items-center">
+                                    <div class="position-relative">
+                                        <img class="img-fluid" src="assets/main/hello_mango.png" alt="" width="180px" height="180px">
+                                       <a href="/confirm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-plus-circle-fill position-absolute svg-icon"
+                                            viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                                        </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <p class="judul">Iced Hello Mango</p>
+                                    <p class="harga">Rp. 30.000</p>
+                                    <p class="caption">Terinspirasi dari keunikan Majalengka, Papa menghadirkan Hello Manga—perpaduan segar dan lezat dari mangga pilihan</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="row mt-4">
+                                <div class="col-6 d-flex justify-content-center align-items-center">
+                                    <div class="position-relative">
+                                        <img class="img-fluid" src="assets/main/coklat.png" alt="" width="180px" height="180px">
+                                       <a href="/confirm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-plus-circle-fill position-absolute svg-icon"
+                                            viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                                        </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <p class="judul">Iced Choco Papa (Reguler)</p>
+                                    <p class="harga">Rp. 15.000</p>
+                                    <p class="caption">Terbuat dari cokelat berkualitas tinggi, tersedia dingin ukuran Regular, sempurna untuk momen santai.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="row mt-4">
+                                <div class="col-6 d-flex justify-content-center align-items-center">
+                                    <div class="position-relative">
+                                        <img class="img-fluid" src="assets/main/matcha.png" alt="" width="180px" height="180px">
+                                       <a href="/confirm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-plus-circle-fill position-absolute svg-icon"
+                                            viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                                        </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <p class="judul">Iced Matcha Papa (Large)</p>
+                                    <p class="harga">Rp. 25.000</p>
+                                    <p class="caption">Matcha premium dingin, kaya rasa dan khasiat, menyegarkan tubuh dan pikiran.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="row mt-4">
+                                <div class="col-6 d-flex justify-content-center align-items-center">
+                                    <div class="position-relative">
+                                        <img class="img-fluid" src="assets/main/coklat.png" alt="" width="180px" height="180px">
+                                       <a href="/confirm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-plus-circle-fill position-absolute svg-icon"
+                                            viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                                        </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <p class="judul">Hot Choco Papa (Reguler)</p>
+                                    <p class="harga">Rp. 15.000</p>
+                                    <p class="caption">Terbuat dari cokelat berkualitas tinggi, tersedia panas ukuran Regular, sempurna untuk momen santai.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="row mt-4">
+                                <div class="col-6 d-flex justify-content-center align-items-center">
+                                    <div class="position-relative">
+                                        <img class="img-fluid" src="assets/main/matcha.png" alt="" width="180px" height="180px">
+                                       <a href="/confirm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-plus-circle-fill position-absolute svg-icon"
+                                            viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                                        </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <p class="judul">Hot Matcha Papa (Large)</p>
+                                    <p class="harga">Rp. 25.000</p>
+                                    <p class="caption">Matcha premium panas, kaya rasa dan khasiat, menyegarkan tubuh dan pikiran.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="row mt-4">
+                                <div class="col-6 d-flex justify-content-center align-items-center">
+                                    <div class="position-relative">
+                                        <img class="img-fluid" src="assets/main/coklat.png" alt="" width="180px" height="180px">
+                                       <a href="/confirm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-plus-circle-fill position-absolute svg-icon"
+                                            viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                                        </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <p class="judul">Iced Choco Papa (Grande)</p>
+                                    <p class="harga">Rp. 20.000</p>
+                                    <p class="caption">Terbuat dari cokelat berkualitas tinggi, tersedia dingin ukuran Grande, sempurna untuk momen santai.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="row mt-4">
+                                <div class="col-6 d-flex justify-content-center align-items-center">
+                                    <div class="position-relative">
+                                        <img class="img-fluid" src="assets/main/coklat.png" alt="" width="180px" height="180px">
+                                       <a href="/confirm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-plus-circle-fill position-absolute svg-icon"
+                                            viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                                        </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <p class="judul">Iced Choco Papa (Large)</p>
+                                    <p class="harga">Rp. 25.000</p>
+                                    <p class="caption">Terbuat dari cokelat berkualitas tinggi, tersedia dingin ukuran Large, sempurna untuk momen santai.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="row mt-4">
+                                <div class="col-6 d-flex justify-content-center align-items-center">
+                                    <div class="position-relative">
+                                        <img class="img-fluid" src="assets/main/coklat.png" alt="" width="180px" height="180px">
+                                       <a href="/confirm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-plus-circle-fill position-absolute svg-icon"
+                                            viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                                        </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <p class="judul">Hot Choco Papa (Grande)</p>
+                                    <p class="harga">Rp. 20.000</p>
+                                    <p class="caption">Terbuat dari cokelat berkualitas tinggi, tersedia panas ukuran Grande, sempurna untuk momen santai.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="row mt-4">
+                                <div class="col-6 d-flex justify-content-center align-items-center">
+                                    <div class="position-relative">
+                                        <img class="img-fluid" src="assets/main/coklat.png" alt="" width="180px" height="180px">
+                                       <a href="/confirm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-plus-circle-fill position-absolute svg-icon"
+                                            viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                                        </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <p class="judul">Hot Choco Papa (Large)</p>
+                                    <p class="harga">Rp. 25.000</p>
+                                    <p class="caption">Terbuat dari cokelat berkualitas tinggi, tersedia panas ukuran Large, sempurna untuk momen santai.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="row mt-4">
+                                <div class="col-6 d-flex justify-content-center align-items-center">
+                                    <div class="position-relative">
+                                        <img class="img-fluid" src="assets/main/papa_island.png" alt="" width="180px" height="180px">
+                                       <a href="/confirm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-plus-circle-fill position-absolute svg-icon"
+                                            viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                                        </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <p class="judul">Iced Papa Island</p>
+                                    <p class="harga">Rp. 23.000</p>
+                                    <p class="caption">Minuman segar tanpa alkohol dengan perpaduan unik Espresso, Kapur, Rose, dan Cherry, siap menemani setiap momen Anda.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="row mt-4">
+                                <div class="col-6 d-flex justify-content-center align-items-center">
+                                    <div class="position-relative">
+                                        <img class="img-fluid" src="assets/main/coconut.png" alt="" width="180px" height="180px">
+                                       <a href="/confirm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-plus-circle-fill position-absolute svg-icon"
+                                            viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                                        </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <p class="judul">Iced Coconut Lemongrass</p>
+                                    <p class="harga">Rp. 25.000</p>
+                                    <p class="caption">Kesegaran tropis dari air kelapa, serai, jeruk nipis, dan mint, tanpa alkohol, menyegarkan dan penuh energi alami.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12"><br></div>
+                        <div class="col-12 head-1" id="pastry">PAPA PASTRY</div>
+                        <div class="col-12 head-2">BREAD</div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="row mt-4">
+                                <div class="col-6 d-flex justify-content-center align-items-center">
+                                    <div class="position-relative">
+                                        <img class="img-fluid" src="assets/main/sourdough.png" alt="" width="180px" height="180px">
+                                       <a href="/confirm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-plus-circle-fill position-absolute svg-icon"
+                                            viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                                        </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <p class="judul">Sourdough Cranberry Cheese</p>
+                                    <p class="harga">Rp. 30.000</p>
+                                    <p class="caption">Roti sourdough dengan kombinasi cranberry manis dan keju gurih, memberikan rasa unik dan tekstur renyah</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="row mt-4">
+                                <div class="col-6 d-flex justify-content-center align-items-center">
+                                    <div class="position-relative">
+                                        <img class="img-fluid" src="assets/main/comel.png" alt="" width="180px" height="180px">
+                                       <a href="/confirm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-plus-circle-fill position-absolute svg-icon"
+                                            viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                                        </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <p class="judul">Comel (Coklat Meleleh)</p>
+                                    <p class="harga">Rp. 30.000</p>
+                                    <p class="caption">Roti lembut dengan isian cokelat leleh yang lumer di mulut, cocok untuk pencinta cokelat.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12"><br></div>
+                        <div class="col-12 head-2">CROISSANT</div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="row mt-4">
+                                <div class="col-6 d-flex justify-content-center align-items-center">
+                                    <div class="position-relative">
+                                        <img class="img-fluid" src="assets/main/almond.png" alt="" width="180px" height="180px">
+                                       <a href="/confirm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-plus-circle-fill position-absolute svg-icon"
+                                            viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                                        </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <p class="judul">Almond</p>
+                                    <p class="harga">Rp. 35.000</p>
+                                    <p class="caption">Croissant berlapis renyah dengan topping almond dan rasa manis yang pas.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="row mt-4">
+                                <div class="col-6 d-flex justify-content-center align-items-center">
+                                    <div class="position-relative">
+                                        <img class="img-fluid" src="assets/main/chocolate.png" alt="" width="180px" height="180px">
+                                       <a href="/confirm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-plus-circle-fill position-absolute svg-icon"
+                                            viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                                        </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <p class="judul">Chocolate</p>
+                                    <p class="harga">Rp. 30.000</p>
+                                    <p class="caption">Croissant isi cokelat yang lembut dan kaya rasa, sempurna untuk camilan manis.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="row mt-4">
+                                <div class="col-6 d-flex justify-content-center align-items-center">
+                                    <div class="position-relative">
+                                        <img class="img-fluid" src="assets/main/smoked_beef.png" alt="" width="180px" height="180px">
+                                       <a href="/confirm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-plus-circle-fill position-absolute svg-icon"
+                                            viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                                        </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <p class="judul">Smoked Beef</p>
+                                    <p class="harga">Rp. 35.000</p>
+                                    <p class="caption">Croissant gurih dengan isian daging sapi asap, cocok untuk yang suka rasa asin dan smokey.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12"><br></div>
+                        <div class="col-12 head-1" id="foodies">FOODIES</div>
+                        <div class="col-12 head-2">SNACK</div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="row mt-4">
+                                <div class="col-6 d-flex justify-content-center align-items-center">
+                                    <div class="position-relative">
+                                        <img class="img-fluid" src="assets/main/french_fries.png" alt="" width="180px" height="180px">
+                                       <a href="/confirm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-plus-circle-fill position-absolute svg-icon"
+                                            viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                                        </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <p class="judul">French Fries</p>
+                                    <p class="harga">Rp. 15.000</p>
+                                    <p class="caption">Kentang goreng renyah dengan saus pelengkap, cocok untuk camilan ringan.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="row mt-4">
+                                <div class="col-6 d-flex justify-content-center align-items-center">
+                                    <div class="position-relative">
+                                        <img class="img-fluid" src="assets/main/cream_cheese_risol.png" alt="" width="180px" height="180px">
+                                       <a href="/confirm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-plus-circle-fill position-absolute svg-icon"
+                                            viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                                        </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <p class="judul">Cream Cheese Risol</p>
+                                    <p class="harga">Rp. 20.000</p>
+                                    <p class="caption">Risoles isi krim keju yang lembut, berpadu dengan kulit luar yang renyah.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="row mt-4">
+                                <div class="col-6 d-flex justify-content-center align-items-center">
+                                    <div class="position-relative">
+                                        <img class="img-fluid" src="assets/main/beef_mayo_risol.png" alt="" width="180px" height="180px">
+                                       <a href="/confirm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-plus-circle-fill position-absolute svg-icon"
+                                            viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                                        </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <p class="judul">Beef Mayo Risol</p>
+                                    <p class="harga">Rp. 25.000</p>
+                                    <p class="caption">Risoles isi daging sapi dengan saus mayo yang gurih dan creamy</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12"><br></div>
+                        <div class="col-12 head-2">RICE</div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="row mt-4">
+                                <div class="col-6 d-flex justify-content-center align-items-center">
+                                    <div class="position-relative">
+                                        <img class="img-fluid" src="assets/main/chicken_rice_bowl.png" alt="" width="180px" height="180px">
+                                       <a href="/confirm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-plus-circle-fill position-absolute svg-icon"
+                                            viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                                        </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <p class="judul">Chicken Rice Bowl</p>
+                                    <p class="harga">Rp. 25.000</p>
+                                    <p class="caption">Nasi dengan ayam berbumbu lezat, disajikan dengan saus pilihan.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="row mt-4">
+                                <div class="col-6 d-flex justify-content-center align-items-center">
+                                    <div class="position-relative">
+                                        <img class="img-fluid" src="assets/main/shrimp_rice_bowl.png" alt="" width="180px" height="180px">
+                                       <a href="/confirm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-plus-circle-fill position-absolute svg-icon"
+                                            viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                                        </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <p class="judul">Shrimp Rice Bowl</p>
+                                    <p class="harga">Rp. 25.000</p>
+                                    <p class="caption">Nasi dengan udang goreng renyah dan saus spesial yang menggugah</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="row mt-4">
+                                <div class="col-6 d-flex justify-content-center align-items-center">
+                                    <div class="position-relative">
+                                        <img class="img-fluid" src="assets/main/iced_classic_milo.png" alt="" width="180px" height="180px">
+                                       <a href="/confirm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-plus-circle-fill position-absolute svg-icon"
+                                            viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                                        </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <p class="judul">Iced Classic Milo</p>
+                                    <p class="harga">Rp. 24.000</p>
+                                    <p class="caption">Minuman klasik cokelat dengan rasa malt dengan saus creamy dan susu creamy.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12"><br></div>
+                        <div class="col-12 head-2">PASTA</div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="row mt-4">
+                                <div class="col-6 d-flex justify-content-center align-items-center">
+                                    <div class="position-relative">
+                                        <img class="img-fluid" src="assets/main/spaghetti_bolognese.png" alt="" width="180px" height="180px">
+                                       <a href="/confirm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-plus-circle-fill position-absolute svg-icon"
+                                            viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                                        </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <p class="judul">Spaghetti Bolognese</p>
+                                    <p class="harga">Rp. 25.000</p>
+                                    <p class="caption">Spaghetti dengan saus bolognese kaya rasa, lengkap dengan taburan keju.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12"><br></div>
+                        <div class="col-12 head-2">MIX PLATTER PAPA</div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="row mt-4">
+                                <div class="col-6 d-flex justify-content-center align-items-center">
+                                    <div class="position-relative">
+                                        <img class="img-fluid" src="assets/main/mix_platter.png" alt="" width="180px" height="180px">
+                                       <a href="/confirm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-plus-circle-fill position-absolute svg-icon"
+                                            viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                                        </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <p class="judul">Mix Platter Papa</p>
+                                    <p class="harga">Rp. 30.000</p>
+                                    <p class="caption">Nikmati kelezatan Mix Platter, kombinasi sempurna dengan pilihan Chicken Wings renyah, Shrimp Roll gurih, dan Sosis lezat . Cocok untuk pengalaman makan yang tak terlupakan!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12"><br></div>
+                        <div class="col-12 head-2">HOT PLATE</div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="row mt-4">
+                                <div class="col-6 d-flex justify-content-center align-items-center">
+                                    <div class="position-relative">
+                                        <img class="img-fluid" src="assets/main/beef_and_egg.png" alt="" width="180px" height="180px">
+                                       <a href="/confirm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-plus-circle-fill position-absolute svg-icon"
+                                            viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                                        </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <p class="judul">Beef And Egg</p>
+                                    <p class="harga">Rp. 35.000</p>
+                                    <p class="caption">Daging sapi berbumbu lada hitam dengan nasi putih, disajikan di hot plate untuk kelezatan yang tetap hangat.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="row mt-4">
+                                <div class="col-6 d-flex justify-content-center align-items-center">
+                                    <div class="position-relative">
+                                        <img class="img-fluid" src="assets/main/chicken_and_egg.png" alt="" width="180px" height="180px">
+                                       <a href="/confirm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-plus-circle-fill position-absolute svg-icon"
+                                            viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                                        </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <p class="judul">Chicken And Egg</p>
+                                    <p class="harga">Rp. 35.000</p>
+                                    <p class="caption">Ayam dengan sambal matah khas, disajikan dengan pilihan nasi putih atau nasi uduk untuk cita rasa autentik.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="row mt-4">
+                                <div class="col-6 d-flex justify-content-center align-items-center">
+                                    <div class="position-relative">
+                                        <img class="img-fluid" src="assets/main/shrimp_and_egg.png" alt="" width="180px" height="180px">
+                                       <a href="/confirm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-plus-circle-fill position-absolute svg-icon"
+                                            viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+                                        </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <p class="judul">Shrimp And Egg</p>
+                                    <p class="harga">Rp. 35.000</p>
+                                    <p class="caption">Udang dengan bumbu balado pedas nikmat, dipadukan dengan nasi putih atau nasi uduk, cocok untuk pencinta makanan berbumbu kuat.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-desktop d-flex footer align-items-center justify-content-center" style="position: relative; height: 273px; margin: 0; padding: 0;">
+
+        <!-- Background Overlay -->
+        <div style="
+        position: absolute; 
+        top: 0; 
+        left: 0; 
+        width: 100%; 
+        height: 100%; 
+        background-color: rgba(0, 96, 65, 0.1);">
+        </div>
+
+        <!-- Konten Footer -->
+        <div class="row d-flex align-items-center justify-content-center p-3 w-65"
+            style="position: absolute; top: 0; z-index: 1; color: #006041; 
+               display: inline-flex; width: auto; border-radius: 10px; align-self: flex-start;">
+
+            <div class="col">
+                <div style="margin-right: 50px;">
+                    <img src="assets/landing/landing-footer.png" alt="" width="148px" height="138px">
+                </div>
+            </div>
+
+            <div class="col">
+                <div style="text-align: left; margin-right: 15px;">
+                    <b style="margin-bottom: 10px;">Contact Us</b>
+                    <div style="margin-bottom: 10px;">
+                        <img src="assets/landing/landing-footer-loc.png" alt="" width="23px" height="23px">
+                        <span>Papagesha Majalengka</span>
+                    </div>
+                    <div>
+                        <img src="assets/landing/landing-footer-wa.png" alt="" width="23px" height="23px">
+                        <span>085182245177</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div style="text-align: left; margin-right: 15px;">
+                    <b style="margin-bottom: 10px;"><br></b>
+                    <div style="margin-bottom: 10px;">
+                        <img src="assets/landing/landing-footer-loc.png" alt="" width="23px" height="23px">
+                        <span>Papagesha Rajagaluh</span>
+                    </div>
+                    <div>
+                        <img src="assets/landing/landing-footer-wa.png" alt="" width="23px" height="23px">
+                        <span>085182245176</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col" style="text-align: left;">
+                <b style="margin-bottom: 10px;"><br></b>
+                <div style="margin-bottom: 10px;">
+                    <img src="assets/landing/landing-footer-loc.png" alt="" width="23px" height="23px">
+                    <span>Papagesha Kadipaten</span>
+                </div>
+                <div>
+                    <img src="assets/landing/landing-footer-wa.png" alt="" width="23px" height="23px">
+                    <span>085182245175</span>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col"></div>
+                <div class="col"></div>
+                <div class="col"></div>
+
+                <div class="col" style="text-align: right;">
+                    <img src="assets/landing/landing-footer-link-1.png" alt="" style="margin: 0 5px;">
+                    <img src="assets/landing/landing-footer-link-2.png" alt="" style="margin: 0 5px;">
+                    <img src="assets/landing/landing-footer-link-3.png" alt="" style="margin: 0 5px;">
+                    <img src="assets/landing/landing-footer-link-4.png" alt="" style="margin: 0 5px;">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <footer class="footer-mobile d-flex flex-column align-items-center justify-content-center"
+        style="position: relative; height: auto; margin: 0; padding: 20px 0;">
+
+        <!-- Background Overlay -->
+        <div style="
+        position: absolute; 
+        top: 0; 
+        left: 0; 
+        width: 100%; 
+        height: 100%; 
+        background-color: rgba(0, 96, 65, 0.1);">
+        </div>
+
+        <!-- Konten Footer -->
+        <div class="container position-relative text-center text-lg-start" style="z-index: 1; color: #006041;">
+            <div class="row align-items-center justify-content-center gy-3">
+
+                <!-- Logo -->
+                <div class="col-12 col-lg-3 text-center text-lg-start">
+                    <img src="assets/landing/landing-footer.png" alt="" width="148px" height="138px">
+                </div>
+
+                <!-- Contact Us 1 -->
+                <div class="col-12 col-sm-6 col-lg-3 text-center text-lg-start">
+                    <b>Contact Us</b>
+                    <div>
+                        <img src="assets/landing/landing-footer-loc.png" alt="" width="23px" height="23px">
+                        <span>Papagesha Majalengka</span>
+                    </div>
+                    <div>
+                        <img src="assets/landing/landing-footer-wa.png" alt="" width="23px" height="23px">
+                        <span>085182245177</span>
+                    </div>
+                </div>
+
+                <!-- Contact Us 2 -->
+                <div class="col-12 col-sm-6 col-lg-3 text-center text-lg-start">
+                    <b><br></b>
+                    <div>
+                        <img src="assets/landing/landing-footer-loc.png" alt="" width="23px" height="23px">
+                        <span>Papagesha Rajagaluh</span>
+                    </div>
+                    <div>
+                        <img src="assets/landing/landing-footer-wa.png" alt="" width="23px" height="23px">
+                        <span>085182245176</span>
+                    </div>
+                </div>
+
+                <!-- Contact Us 3 -->
+                <div class="col-12 col-sm-6 col-lg-3 text-center text-lg-start">
+                    <b><br></b>
+                    <div>
+                        <img src="assets/landing/landing-footer-loc.png" alt="" width="23px" height="23px">
+                        <span>Papagesha Kadipaten</span>
+                    </div>
+                    <div>
+                        <img src="assets/landing/landing-footer-wa.png" alt="" width="23px" height="23px">
+                        <span>085182245175</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <br>
+            <!-- Social Media Links -->
+            <div class="row mt-3 text-center">
+                <div class="col">
+                    <img src="assets/landing/landing-footer-link-1.png" alt="" style="margin: 0 5px;">
+                    <img src="assets/landing/landing-footer-link-2.png" alt="" style="margin: 0 5px;">
+                    <img src="assets/landing/landing-footer-link-3.png" alt="" style="margin: 0 5px;">
+                    <img src="assets/landing/landing-footer-link-4.png" alt="" style="margin: 0 5px;">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="asset('bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js')"></script>
+</body>
+
+</html>
