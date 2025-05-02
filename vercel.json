@@ -21,7 +21,7 @@
     "env": {
         "APP_ENV": "production",
         "APP_DEBUG": "false",
-        "APP_URL": "https://papagesha.vercel.app",
+        "APP_URL": "https://papagesha-pi.vercel.app/",
         "APP_KEY": "base64:T3akwwWYI2cQBTqv/rwhjHCbkmv8ElgrcBaV5yhFQJg=",
         "APP_CONFIG_CACHE": "/tmp/config.php",
         "APP_EVENTS_CACHE": "/tmp/events.php",
