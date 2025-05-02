@@ -1,3 +1,5 @@
 /vendor
 /.git
 /node_modules
+/storage/*.key
+/bootstrap/cache/*
