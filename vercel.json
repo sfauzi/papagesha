@@ -2,11 +2,18 @@
     "version": 2,
     "framework": null,
     "functions": {
-        "api/*.php": { "runtime": "vercel-php@0.6.0" }
+        "api/*.php": {
+            "runtime": "vercel-php@0.6.0"
+        }
     },
-    "routes": [
-        { "src": "/build/(.*)", "dest": "/public/build/" },
-        { "src": "/(.*)", "dest": "/api/index.php" }
+    "routes": [{
+            "src": "/build/(.*)",
+            "dest": "/public/build/"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/api/index.php"
+        }
     ],
     "public": true,
     "buildCommand": "vite build",
@@ -15,7 +22,7 @@
         "APP_ENV": "production",
         "APP_DEBUG": "false",
         "APP_URL": "https://papagesha.vercel.app",
-        "APP_KEY": "base64:TGaVaXwhWgjn9akhE4SCSIjGG/cQqvICUQ+PgLA3Bs0=",
+        "APP_KEY": "base64:T3akwwWYI2cQBTqv/rwhjHCbkmv8ElgrcBaV5yhFQJg=",
         "APP_CONFIG_CACHE": "/tmp/config.php",
         "APP_EVENTS_CACHE": "/tmp/events.php",
         "APP_PACKAGES_CACHE": "/tmp/packages.php",
@@ -24,6 +31,8 @@
         "VIEW_COMPILED_PATH": "/tmp",
         "CACHE_DRIVER": "array",
         "LOG_CHANNEL": "stderr",
-        "SESSION_DRIVER": "cookie"
+        "SESSION_DRIVER": "cookie",
+        "SSR_TEMP_PATH": "/tmp/ssr",
+        "NODE_PATH": "node"
     }
 }
